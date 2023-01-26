@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+<h2>Iam the coder</h2>
+<hr>
+<app-server></app-server>
+<app-servers></app-servers>
+<app-suraj></app-suraj>
+<app-warning-alert></app-warning-alert>
+ <app-success-alert></app-success-alert>
+ <label>Username</label>
+<input type="text" class="from-control" [(ngModel)]="username">
+<p>{{username}}</p>
+<button
+ class="btn btn-primary"
+ [disabled]="username ===''"
+ (click)="username=''">reset User</button>
+ <hr>
+<!--<button class="btn btn-primary" (click)="showSecret=!showSecret">Display details</button>-->
+<button class="btn btn-primary" (click)="onToggleDetails()">Display details</button>
+<p *ngIf="showSecret">scret password=tuna</p>
+  <div *ngFor="let logItem of log"
+  [ngStyle]="{backgroundColor:logItem>=5? 'green' :'transparent'}"
+  [ngClass]="{'white-text':logItem>=5}">{{logItem}}
+  </div>
+    </div>
+  </div>
+</div>
